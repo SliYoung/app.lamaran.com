@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Lamaran Kerja</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+      <span>Lamarin</span>
+    </div>
+    <nav>
+      <a href="#dashboard" class="active"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Dashboard</span></a>
+      <a href="#kirim"><svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg><span>Kirim Lamaran</span></a>
+      <a href="#riwayat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Riwayat</span></a>
+    </nav>
+    <a href="#kirim" class="new-btn" id="newBtn"><span>Lamaran baru</span><b>+</b></a>
+  </aside>
+
+  <!-- Konten utama -->
+  <main class="main" id="dashboard">
+    <header class="top">
+      <div><h1>Dashboard</h1><p id="today"></p></div>
+      <div class="chip" id="weekChip"></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-icons" aria-hidden="true">
+        <i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i>
+        <i><svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></i>
+      </div>
+      <div class="hero-text">
+        <h2>Halo, <span id="heroName"></span></h2>
+        <p id="heroText"></p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="card chart-card">
+        <h3>Aktivitas 7 hari</h3>
+        <div class="bars" id="bars"></div>
+      </div>
+      <div class="card ring-card">
+        <h3>Progres</h3>
+        <div class="ring" id="ring"><span id="ringText">0%</span></div>
+        <p id="ringLabel">Target mingguan</p>
+      </div>
+      <div class="card mini"><span>Terkirim</span><strong id="statTotal">0</strong></div>
+      <div class="card mini"><span>Perusahaan</span><strong id="statCompany">0</strong></div>
+    </section>
+
+    <section class="card" id="kirim">
+      <h3>Kirim lamaran</h3>
+      <form id="applyForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="toEmail">Email HRD / perusahaan</label>
+            <input type="email" id="toEmail" placeholder="hrd@perusahaan.com" required>
+          </div>
+          <div class="field">
+            <label for="company">Nama perusahaan</label>
+            <input type="text" id="company" placeholder="PT Maju Bersama" required>
+          </div>
+          <div class="field">
+            <label for="position">Posisi yang dilamar</label>
+            <input type="text" id="position" placeholder="Web Developer" required>
+          </div>
+          <div class="field">
+            <label for="template">Template cover letter</label>
+            <select id="template">
+              <option value="webdev">Web Developer</option>
+              <option value="admin">Administrative Staff</option>
+              <option value="general">General Application</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="letter">Cover letter (bisa diedit)</label>
+          <textarea id="letter" rows="13"></textarea>
+        </div>
+        <div class="actions">
+          <button type="button" id="generateBtn" class="btn btn-ghost">Generate cover letter</button>
+          <button type="submit" id="sendBtn" class="btn btn-primary">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-label">Kirim lamaran sekarang</span>
+          </button>
+        </div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card" id="riwayat">
+      <div class="history-head">
+        <h3>Riwayat pengiriman</h3>
+        <button type="button" id="clearBtn" class="btn-link">Hapus riwayat</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tanggal</th><th>Perusahaan</th><th>Posisi</th><th>Status</th></tr></thead>
+          <tbody id="historyBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Panel kanan -->
+  <aside class="panel">
+    <h3>Profil saya</h3>
+    <div class="profile">
+      <div class="avatar"><span id="avatar"></span></div>
+      <strong id="profName"></strong>
+      <small id="profEmail"></small>
+      <small id="profPhone"></small>
+    </div>
+    <div class="panel-head"><h3>Terakhir dikirim</h3></div>
+    <ul class="recent" id="recent"></ul>
+  </aside>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
