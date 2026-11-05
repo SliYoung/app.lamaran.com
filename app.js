@@ -29,7 +29,7 @@ Saya {{nama}}, bermaksud melamar posisi {{position}} di {{company}}.
   
 Saya memiliki latar belakang dan keterampilan yang relevan, cepat beradaptasi dengan lingkungan kerja baru, serta berkomitmen untuk memberikan kontribusi positif bagi pertumbuhan perusahaan. Saya juga terbiasa bekerja secara mandiri maupun dalam tim dengan tingkat kedisiplinan dan tanggung jawab yang tinggi.
   
-Sebagai bahan pertimbangan Bapak/Ibu, bersama surat ini saya melampirkan Daftar Riwayat Hidup (CV) beserta dokumen pendukung lainnya. Besar harapan saya untuk diberikan kesempatan mengikuti tahapan seleksi selanjutnya.
+Sebagai bahan pertimbangan Bapak/Ibu, bersama surat ini saya melampirkan Daftar Riwayat Hidup (CV),Portofolio (https://app-portofolio-com.vercel.app/) beserta dokumen pendukung lainnya. Besar harapan saya untuk diberikan kesempatan mengikuti tahapan seleksi selanjutnya.
   
 Terima kasih atas perhatiannya.
   
